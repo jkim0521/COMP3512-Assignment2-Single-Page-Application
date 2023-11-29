@@ -2,43 +2,72 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Music Application</title>
+    <title>Single Page Music App</title>
+    <!-- Link to your CSS file -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Music Application</h1>
-        <!-- TODO: Additional header content -->
+        <h1>Music App</h1>
     </header>
 
     <main>
         <!-- Search/Browse Songs View -->
-        <section id="search-view">
-            <h2>Search/Browse Songs</h2>
-            <!-- Elements for searching and browsing songs will go here -->
-        </section>
+        <section id="searchView">
+            <!-- Basic Song Search Side Menu -->
+            <aside id="searchFilter">
+                <form id="searchForm">
+                    <!-- Title Filter -->
+                    <input type="radio" id="titleSearch" name="searchType" value="title" checked>
+                    <label for="titleSearch">Title</label>
+                    <input type="text" id="titleInput" placeholder="Type here">
+            
+                    <!-- Artist Filter -->
+                    <input type="radio" id="artistSearch" name="searchType" value="artist">
+                    <label for="artistSearch">Artist</label>
+                    <select id="artistInput" disabled>
+                        <!-- Options will be populated with JS -->
+                    </select>
+            
+                    <!-- Genre Filter -->
+                    <input type="radio" id="genreSearch" name="searchType" value="genre">
+                    <label for="genreSearch">Genre</label>
+                    <select id="genreInput" disabled>
+                        <!-- Options will be populated with JS -->
+                    </select>
+            
+                    <!-- Filter and Clear Buttons -->
+                    <button type="button" id="clearFilter">Clear</button>
+                    <button type="button" id="applyFilter">Filter</button>
+                </form>
+            </aside>
 
-        <!-- Song Details View -->
-        <section id="song-details-view">
-            <h2>Song Details</h2>
-            <!-- Elements for displaying song details will go here -->
-        </section>
-
-        <!-- Playlist View -->
-        <section id="playlist-view">
-            <h2>Playlist</h2>
-            <!-- Elements for playlist management will go here -->
+            <!-- Songs Table -->
+            <section id="songsTable">
+                <table>
+                    <thead>
+                        <tr>
+                            <th id="sortTitle">Title <span class="sort-icon" data-sort="title">&#9660;</span></th>
+                            <th id="sortArtist">Artist <span class="sort-icon" data-sort="artist">&#9660;</span></th>
+                            <th id="sortYear">Year <span class="sort-icon" data-sort="year">&#9660;</span></th>
+                            <th id="sortGenre">Genre <span class="sort-icon" data-sort="genre">&#9660;</span></th>
+                            <th id="sortPopularity">Popularity <span class="sort-icon" data-sort="popularity">&#9660;</span></th>
+                            <th>Add</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Songs will be populated with JS -->
+                    </tbody>
+                </table>
+            </section>
         </section>
     </main>
 
     <footer>
         <!-- Footer content -->
-        <h1>
-            Name: Joseph Kim
-        </h1>
     </footer>
 
+    <!-- JavaScript File -->
     <script src="js/assign2.js"></script>
 </body>
 </html>

@@ -1,0 +1,176 @@
+/* General reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    max-height: 100vh;
+    overflow-x: hidden; /* Hide horizontal overflow */
+    font-family: 'Arial', sans-serif;
+}
+
+/* Body styling for a dark theme */
+body {
+    background-color: #333;
+    color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header with title and navigation buttons */
+header {
+    background-color: #222;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+}
+
+nav button {
+    background-color: cyan;
+    color: #333;
+    border: none;
+    padding: 10px 15px;
+    margin-left: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav button:hover {
+    background-color: white;
+    color: #333;
+}
+
+/* Main content area with search filters and the song table */
+main {
+    display: flex; /* Use flexbox to layout children horizontally */
+    padding-top: 0; /* Only padding at the top to space below the header */
+    overflow: hidden; /* Hide overflow to prevent extra scrollbars */
+    
+}
+
+/* Side filter menu */
+aside#searchFilter {
+    position: fixed; /* Fixed position to make it stay in place while scrolling */
+    width: 250px; /* Adjust width as needed */
+    padding: 20px;
+    background-color: #2a2a2a;
+    top: 60px; /* Adjust this value to the height of your header */
+    bottom: 0; /* Stretch to the bottom of the viewport */
+    overflow-y: auto; /* Allows scrolling if content overflows */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    gap: 15px;
+}
+
+/* Style for the filter title */
+#searchFilter h2 {
+    margin-bottom: 15px; /* Provide space below the title */
+    font-size: 1.2em; /* Adjust font size as needed */
+    color: white; /* Title color */
+}
+
+/* Hover effect for buttons */
+#searchFilter button:hover {
+    background-color: white; /* Background color on hover */
+    color: #333; /* Text color on hover */
+}
+
+/* Ensure radio buttons align with their labels vertically */
+#searchFilter input[type="radio"] {
+    vertical-align: middle;
+}
+
+/* If you have a title in your filter box, such as "Filter Songs" */
+#searchFilter h3 {
+    color: white; /* Color for the title */
+    padding-bottom: 10px; /* Space below the title */
+}
+
+/* Styling for radio buttons and their labels for better alignment and spacing */
+#searchFilter input[type="radio"] + label {
+    margin-left: 5px; /* Space out the label from the radio button */
+    margin-right: 15px; /* Space after the label before the next radio button */
+}
+
+/* Button styling within the filter box */
+#searchFilter button {
+    padding: 8px 16px; /* Padding inside buttons */
+    border: none; /* Remove default border */
+    border-radius: 4px; /* Slightly rounded corners for buttons */
+    background-color: cyan; /* Background color for buttons */
+    color: #333; /* Text color for buttons */
+    cursor: pointer; /* Change cursor to pointer on hover */
+    transition: background-color 0.3s; /* Transition for the hover effect */
+}
+
+
+#searchFilter input[type="text"],
+#searchFilter select {
+    padding: 8px; /* Padding inside the input fields and selects */
+    border-radius: 4px; /* Slightly rounded corners for the inputs */
+    border: 1px solid #555; /* Subtle border for inputs */
+    background-color: #222; /* Slightly darker background for inputs for contrast */
+    color: white; /* Text color for inputs */
+}
+
+/* Styling for the form containing the filter elements */
+#searchFilter form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Adjust the space between form elements */
+}
+
+/* Table container */
+#songsTable {
+    margin-left: 270px; /* Adjust this value to match the width + padding + any margins of the filter box */
+    width: calc(100% - 270px); /* Adjust this value too if you change the margin-left */
+    overflow-x: auto; /* Allows for a responsive table */
+    overflow-y: auto; /* Allows vertical scrolling */
+    height: calc(100vh - 60px); /* Adjust to the height of your header */
+}
+
+/* Table styling */
+#songsTable table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#songsTable th, #songsTable td {
+    padding: 10px;
+    border-bottom: 1px solid #555;
+    text-align: left;
+}
+
+/* Adjust font color for links */
+#songsTable a {
+    color: white; /* Make links white for better visibility */
+    text-decoration: none; /* Optionally remove underline from links */
+}
+
+#songsTable a:hover {
+    text-decoration: underline; /* Add underline on hover for links */
+}
+
+/* Footer styling */
+footer {
+    background-color: #222;
+    padding: 10px 0;
+    text-align: center;
+}
+
+.sort-icon {
+    cursor: pointer;
+}
