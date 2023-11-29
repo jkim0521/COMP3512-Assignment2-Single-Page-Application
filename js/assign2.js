@@ -299,8 +299,6 @@ function showSnackbar(message) {
    // Set the message
    snackbar.textContent = message;
    
-   // Add styling to position and style the snackbar
-   // You might want to add additional styling in your CSS file and here just add a class to the snackbar
    snackbar.style.position = 'fixed';
    snackbar.style.bottom = '20px';
    snackbar.style.left = '50%';
