@@ -66,7 +66,7 @@ aside#searchFilter {
     width: 250px; /* Adjust width as needed */
     padding: 20px;
     background-color: #2a2a2a;
-    top: 60px; /* Adjust this value to the height of your header */
+    top: 60px; /* Adjust the value to the height of header */
     bottom: 0; /* Stretch to the bottom of the viewport */
     overflow-y: auto; /* Allows scrolling if content overflows */
     display: flex;
@@ -93,7 +93,6 @@ aside#searchFilter {
     vertical-align: middle;
 }
 
-/* If you have a title in your filter box, such as "Filter Songs" */
 #searchFilter h3 {
     color: white; /* Color for the title */
     padding-bottom: 10px; /* Space below the title */
@@ -136,10 +135,10 @@ aside#searchFilter {
 /* Table container */
 #songsTable {
     margin-left: 270px; /* Adjust this value to match the width + padding + any margins of the filter box */
-    width: calc(100% - 270px); /* Adjust this value too if you change the margin-left */
+    width: calc(100% - 270px); /* Adjust value if need to change the margin-left */
     overflow-x: auto; /* Allows for a responsive table */
     overflow-y: auto; /* Allows vertical scrolling */
-    height: calc(100vh - 60px); /* Adjust to the height of your header */
+    height: calc(100vh - 60px); /* Adjust to the height of the header */
 }
 
 /* Table styling */
