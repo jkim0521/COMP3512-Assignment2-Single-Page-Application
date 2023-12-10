@@ -52,6 +52,7 @@ nav button:hover {
     color: #333;
 }
 
+
 /* Main content area with search filters and the song table */
 main {
     display: flex; /* Use flexbox to layout children horizontally */
@@ -59,6 +60,15 @@ main {
     overflow: hidden; /* Hide overflow to prevent extra scrollbars */
     
 }
+  
+.filter-option {
+    display: flex;
+    align-items: center;
+  }
+  
+  .filter-option input[type="radio"] {
+    margin-right: 5px; /* Space between radio button and label */
+  }
 
 /* Side filter menu */
 aside#searchFilter {
@@ -66,7 +76,7 @@ aside#searchFilter {
     width: 250px; /* Adjust width as needed */
     padding: 20px;
     background-color: #2a2a2a;
-    top: 60px; /* Adjust the value to the height of header */
+    top: 60px; /* Adjust this value to the height of header */
     bottom: 0; /* Stretch to the bottom of the viewport */
     overflow-y: auto; /* Allows scrolling if content overflows */
     display: flex;
@@ -135,10 +145,10 @@ aside#searchFilter {
 /* Table container */
 #songsTable {
     margin-left: 270px; /* Adjust this value to match the width + padding + any margins of the filter box */
-    width: calc(100% - 270px); /* Adjust value if need to change the margin-left */
+    width: calc(100% - 270px);
     overflow-x: auto; /* Allows for a responsive table */
     overflow-y: auto; /* Allows vertical scrolling */
-    height: calc(100vh - 60px); /* Adjust to the height of the header */
+    height: calc(100vh - 60px); /* Adjust to the height of header */
 }
 
 /* Table styling */
@@ -162,6 +172,126 @@ aside#searchFilter {
 #songsTable a:hover {
     text-decoration: underline; /* Add underline on hover for links */
 }
+
+#radarChart{
+    width: 560px;  /* Set the desired width */
+    height: 560px; /* Set the desired height */
+}
+
+#chart-container {
+    background-color: white;
+}
+
+/* Header styles */
+#header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+  }
+  
+  #playlistView header {
+    background-color: transparent; /* Make header background transparent */
+    padding-top: 12px
+  }
+
+  /* Playlist summary and button container within the header */
+  #playlistSummary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  
+  /* Style for the table in the playlist view */
+  #playlistTable {
+    width: 100%; /* Full width */
+    border-collapse: collapse;
+  }
+  
+/* Style the "Close View" and "Credits" buttons */
+#closeViewButton, #creditsButton, #playlistButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: rgb(183, 89, 255);
+    color: #000000;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+#closeViewButton:hover, #creditsButton:hover, #playlistButton:hover {
+    background-color: #ce99ff; /* Darker shade of cyan for hover effect */
+  }
+
+/* Align the Close View button with the Credits button */
+#closeViewButton, #playlistButton {
+    margin-left: auto; /* Pushes the button to the end of the flex container */
+    margin-right: 16px;
+  }
+
+  #header button {
+    margin-right: 8px; /* Add space to the right of buttons */
+}
+  
+  #playlistTable th,
+  #playlistTable td {
+    border-bottom: 1px solid #ccc; /* Dashed lines for table rows */
+    text-align: center;
+    padding-left: 16px; /* Increase left padding */
+    padding-right: 62px; /* Increase right padding */
+    padding-top: 8px;
+    padding-bottom: 8px
+  }
+
+  /* Ensure the container of the table (if exists) also spans full width */
+.container-of-playlist-table { /* Replace with actual container selector */
+    width: 100%;
+    padding: 0;
+    margin: 0;
+  }
+
+  #playlistView button, #header button, #addButton {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: cyan;
+    color: #333;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#playlistView button:hover, #header button:hover, #addButton {
+    background-color: #0EBFE9; /* Darker shade of cyan for hover effect */
+}
+  
+  #playlistView a {
+    color: white; /* Set the font color to white */
+    text-decoration: none; /* Removes underline */
+  }
+  
+  #playlistView a:visited {
+    color: white; /* Ensures visited links are also white */
+  }
+
+  #playlistView a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+  }
+
+  /* Clear Playlist button */
+  #clearPlaylistButton {
+    position: absolute;
+    right: 10px;
+    top: 10px; /* Adjust as needed */
+  }
+  
+  /* Footer styles */
+  footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
 
 /* Footer styling */
 footer {

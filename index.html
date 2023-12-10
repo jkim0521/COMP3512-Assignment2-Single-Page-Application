@@ -3,14 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <title>Single Page Music App</title>
+    <!-- Link to the CSS file -->
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <header>
         <h1>Music App</h1>
+        <button id="playlistButton">Playlist</button>
+        <button id="closeViewButton" style="display: none;">Close View</button>
+        <button id="creditsButton">Credits</button>
     </header>
 
     <main>
+        <div class="header">
+        </div>
         <!-- Search/Browse Songs View -->
         <section id="searchView">
             <!-- Basic Song Search Side Menu -->
@@ -60,6 +67,53 @@
                 </table>
             </section>
         </section>
+        <!-- Single Song View Section -->
+        <section id="singleSongView" style="display: none;">
+            <div id="songDetails">
+            <h2 id="songTitle">Song Title</h2>
+            <p><strong>Artist Name:</strong> <span id="artistName"></span></p>
+            <p><strong>Artist Type:</strong> <span id="artistType"></span></p>
+            <p><strong>Genre:</strong> <span id="songGenre"></span></p>
+            <p><strong>Year:</strong> <span id="songYear"></span></p>
+            <p><strong>Duration:</strong> <span id="songDuration"></span></p>
+            <h3>Analysis Data:</h3>
+            <p><strong>BPM:</strong> <span id="songBPM"></span></p>
+            <p><strong>Energy:</strong> <span id="songEnergy"></span></p>
+            <p><strong>Danceability:</strong> <span id="songDanceability"></span></p>
+            <p><strong>Liveness:</strong> <span id="songLiveness"></span></p>
+            <p><strong>Valence:</strong> <span id="songValence"></span></p>
+            <p><strong>Acousticness:</strong> <span id="songAcousticness"></span></p>
+            <p><strong>Speechiness:</strong> <span id="songSpeechiness"></span></p>
+            <p><strong>Popularity:</strong> <span id="songPopularity"></span></p>
+            </div>
+            <div id="radarChartContainer">
+            <canvas id="radarChart"></canvas>
+            </div>
+        </section>
+
+        <!-- Playlist View Section -->
+        <section id="playlistView" style="display: none;">
+            <header>
+                <h2>Playlist Details</h2>
+                <span id="playlistStats"></span>
+                <button id="clearPlaylist">Clear Playlist</button>
+            </header>
+            <table id="playlistTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Year</th>
+                        <th>Genre</th>
+                        <th>Popularity</th>
+                        <th>Remove</th>
+                    </tr>
+                </thead>
+        <tbody id="playlistTableBody">
+            <!-- Playlist songs will be populated here with JavaScript -->
+        </tbody>
+    </table>
+    </section>
     </main>
 
     <footer>
